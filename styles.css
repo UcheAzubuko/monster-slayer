@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+header {
+  background-color: rgb(133, 24, 24);
+  color: white;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 2rem 0;
+}
+
+#game-block {
+  max-width: 50rem;
+  margin: auto;
+  padding: 1rem 1.5rem;
+}
+
+#game-block .card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  text-align: center;
+  padding: 1rem 2rem;
+  margin: 1.5rem 0;
+  border-radius: 10px;
+}
+
+#game-block .healthbar {
+  width: 100%;
+  margin: 1rem 0;
+  height: 40px;
+  border: 1px solid #ccc;
+  background-color: #fdefe5;
+}
+
+#game-block .healthbar_value {
+  width: 100%;
+  height: 100%;
+  background-color: #00a876;
+}
+
+#game-block .btn-a {
+  grid-area: attack;
+}
+
+#game-block .btn-sa {
+  grid-area: sattack;
+}
+
+#game-block .btn-h {
+  grid-area: heal;
+}
+
+#game-block .btn-s {
+  grid-area: surrender;
+}
+
+#game-block .game-controls {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+  grid-template-areas:
+    "attack sattack"
+    "heal surrender";
+}
+
+#game-block .btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background-color: purple;
+  border-radius: 10px;
+  outline: none;
+  color: white;
+  font: inherit;
+  width: 12rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  cursor: pointer;
+}
+
+#game-block .btn:hover,
+#game-block .btn:active {
+  background-color: #af0a78;
+}
+
+#game-block .btn:disabled {
+  background-color: #ccc;
+  box-shadow: none;
+  cursor: not-allowed;
+  color: #3f3f3f;
+}
+
+#game-block ul {
+  list-style: none;
+}
+
+#game-block li {
+  margin: 0.5rem 0;
+}
+
+.log-player {
+  color: #7700ff;
+}
+
+.log-monster {
+  color: #da8d00;
+}
+
+.log-damage {
+  color: red;
+}
+
+.log-heal {
+  color: green;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Document</title>
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Slay The Monster</h1>
+  </header>
+  <div id="game-block">
+    <div id="monster" class="card">
+      <h2>Monster's Health</h2>
+      <div class="healthbar">
+        <div class="healthbar_value" :style="monsterBarStyles"></div>
+      </div>
+    </div>
+    <div id="player" class="card">
+      <h2>Your Health</h2>
+      <div class="healthbar">
+        <div class="healthbar_value" :style="playerBarStyles"></div>
+      </div>
+    </div>
+    <div class="card" v-if="winner">
+      <h2>Game Over!</h2>
+      <h3 v-if="winner === 'player'">You won 🤩</h3>
+      <h3 v-if="winner === 'monster'">You lost 😔</h3>
+      <h3 v-if="winner === 'draw'">It's a draw 😑</h3>
+      <button class="btn" @click="restartGame">RESTART GAME</button>
+    </div>
+    <div id="controls" class="game-controls" v-else>
+      <button class="btn-a btn" @click="attackMonster">ATTACK</button>
+      <button :disabled="disabledBtn" class="btn-sa btn" @click="specialAttackMonster">SPECIAL ATTACK</button>
+      <button class="btn-h btn" @click="healPlayer">HEAL</button>
+      <button class="btn-s btn" @click="surrender">SURRENDER</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
